@@ -1,0 +1,13 @@
+{
+  "name": "Pocket-Workouts",
+  "version": "1.0.0",
+  "description": "Workouts Template Generator",
+  "main": "html/index.html",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
