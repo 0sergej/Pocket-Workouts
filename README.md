@@ -1,2 +1,2 @@
-# Pocket-Workouts
+# AI Gym
 Workout Template Generator
