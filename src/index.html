@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../dist/output.css">
+        <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
+        <script type="module" defer src="./ts/Controller.ts"></script>
+        <title>Pocket Workouts - Welcome</title>
+    </head>
+    <body>
+        <header class="flex h-24 pl-10 pr-20 justify-between content-center bg-[var(--primary)]">
+            <div class="logo-container | flex gap-5">
+                <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
+                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] xl:text-[length:var(--heading)] self-center">Pocket Wokrouts</h1>
+            </div>
+            <div class="buttons-container | flex justify-end gap-12 items-center">
+                <button class="log--in--btn | px-8 h-9 bg-[var(--accent)] text-[length:var(--text--sm)]  xl:text-[length:var(--text)] text-black hover:text-white rounded-md">Log In</button>
+                <button class="signup--btn | px-8 h-9 bg-[var(--accent)]  text-text--sm text-black ] text-[length:var(--text--sm)]  xl:text-[length:var(--text)] rounded-md">Sign Up</button>
+            </div>
+        </header>
+        <dialog class="login--modal | border-2 border-orange-500 bg-red-500 w-20 h-20">
+            <p>Log in</p>
+        </dialog>
+    </body>
+</html>
