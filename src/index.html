@@ -7,31 +7,63 @@
         <link href="./css/index.css" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
         <script type="module" defer src="./ts/Controller.ts"></script>
-        <title>AI GYM - Welcome</title>
+        <title>AI GYM - Welcome!</title>
     </head>
     <body>
         <header class="flex h-24 pl-10 pr-20 justify-between content-center bg-[var(--primary)]">
-            <div class="logo-container | flex gap-5">
+            <div id="logo-container" class="flex gap-5">
                 <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
                 <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] xl:text-[length:var(--heading)] self-center">AI Gym</h1>
             </div>
-            <div class="buttons-container | flex justify-end gap-12 items-center">
-                <button class="log--in--btn | px-8 h-9 bg-[var(--accent)] text-[length:var(--text--sm)]  xl:text-[length:var(--text)] text-black rounded-md hover:text-white r">Log In</button>
-                <button class="signup--btn | px-8 h-9 bg-[var(--accent)]  text-text--sm text-black ] text-[length:var(--text--sm)]  xl:text-[length:var(--text)] rounded-md hover:text-white r">Sign Up</button>
+            <div id="buttons-container" class="flex justify-end gap-12 items-center">
+                <button id="login--btn" class="btn-accent">Log In</button>
+                <button id="signup--btn" class="btn-accent">Sign Up</button>
             </div>
         </header>
-        <dialog open class="login--modal text-center">
-            <h2 class="">Log in</h2>
-            <form method="dialog">
+        <!-- <dialog id="login--modal" class="modal">
+            <form method="dialog" class="flex gap-4 p-4 flex-col">
                 <label>
-                    Username:
-                    <input type="text">
+                    <input class="text-center w-32" type="text" placeholder="Username">
                 </label>
                 <label>
-                    Password:
-                    <input type="password">
+                    <input class="text-center w-32" type="password" placeholder="*****">
                 </label>
             </form>
+            <button class="btn-accent max-w-fit mx-auto" type="submit">Log In</button>
         </dialog>
+        <dialog id="signup--modal" class="modal">
+            <form method="dialog" class="flex gap-4 p-4 flex-col">
+                <label>
+                    <input class="text-center w-32" type="text" placeholder="Username">
+                </label>
+                <label>
+                    <input class="text-center w-32" type="password" placeholder="*****">
+                </label>
+                <label>
+                    <input class="text-center w-32" type="password" placeholder="*****">
+                </label>
+            </form>
+            <button class="btn-accent max-w-fit mx-auto" type="submit">Sign Up</button>
+        </dialog> -->
+        <section class="grid">
+            <div class=""></div>
+            <div class="title">
+                <h2 class="text-[lenght:var(--heading)]">
+                    Log Your Workouts Easily
+                    Keep Everything in one place 
+                    Your Progress Stays in Your
+                    <span class="text-[color:var(--accent)]">
+                        Pocket!
+                    </span>
+                </h2>
+            </div>
+            <div>
+                <div class="dot-1 bg-[var(--accent)] w-5 rounded-full"></div>
+                <div class="dot-2 bg-[var(--primary)] w-5 rounded-full"></div>
+                <div class="dot-3 bg-[var(--primary)] w-5 rounded-full"></div>
+                <div class="dot-4 bg-[var(--primary)] w-5 rounded-full"></div>
+                <div class="dot-5 bg-[var(--primary)] w-5 rounded-full"></div>
+            </div>
+        </section>
     </body>
 </html>
