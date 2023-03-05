@@ -45,25 +45,31 @@
             </form>
             <button class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
         </dialog> -->
-        <section class="grid">
-            <div class=""></div>
-            <div class="title">
-                <h2 class="text-[lenght:var(--heading)]">
-                    Log Your Workouts Easily
-                    Keep Everything in one place 
-                    Your Progress Stays in Your
-                    <span class="text-[color:var(--accent)]">
-                        Pocket!
-                    </span>
-                </h2>
-            </div>
-            <div>
-                <div class="dot-1 bg-[var(--accent)] w-5 rounded-full"></div>
-                <div class="dot-2 bg-[var(--primary)] w-5 rounded-full"></div>
-                <div class="dot-3 bg-[var(--primary)] w-5 rounded-full"></div>
-                <div class="dot-4 bg-[var(--primary)] w-5 rounded-full"></div>
-                <div class="dot-5 bg-[var(--primary)] w-5 rounded-full"></div>
-            </div>
-        </section>
+        <hero class="grid grid-flow-col grid-cols-[minmax(555px,_40%)_60%] h-[50rem]">
+            <section class="left | flex bg-red-500 flex-col justify-center items-center">
+                <div class="image | ">
+                    <img class="w-[30rem]" src="../assets/png/ScreenShot.png" alt="Program Template Example">
+                </div>
+                <div class="flex gap-10 mt-8">
+                    <div class="dot-1 bg-[var(--accent)]  w-8 h-8 rounded-full"></div>
+                    <div class="dot-4 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
+                    <div class="dot-3 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
+                    <div class="dot-2 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
+                    <div class="dot-5 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
+                </div>
+            </section>
+            <section class="right | bg-blue-400">
+                <div class="title">
+                    <h2 class="text-[lenght:var(--heading)]">
+                        Log Your Workouts Easily
+                        Keep Everything in one place 
+                        Your Progress Stays in Your
+                        <span class="text-[color:var(--accent)]">
+                            Pocket!
+                        </span>
+                    </h2>
+                </div>
+            </section>
+        </hero>
     </body>
 </html>
