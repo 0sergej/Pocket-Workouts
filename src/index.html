@@ -8,44 +8,44 @@
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
         <script type="module" defer src="./ts/Controller.ts"></script>
-        <title>AI GYM - Welcome!</title>
+        <title>Pocket Workouts - Welcome!</title>
     </head>
     <body class="bg-[var(--background)]">
         <header class="flex h-24 pl-10 pr-20 justify-between content-center bg-[var(--primary)]">
             <div id="logo-container" class="flex gap-5">
                 <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
-                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] xl:text-[length:var(--heading)] self-center">AI Gym</h1>
+                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] xl:text-[length:var(--heading)] self-center">Pocket Workouts</h1>
             </div>
             <div id="buttons-container" class="flex justify-end gap-12 items-center">
-                <button id="login--btn" class="btn--accent">Log In</button>
-                <button id="signup--btn" class="btn--accent">Sign Up</button>
+                <button id="log__in--btn" class="btn--accent">Log In</button>
+                <button id="sign__up--btn" class="btn--accent">Sign Up</button>
             </div>
         </header>
-        <!-- <dialog id="login--modal" class="modal">
+        <dialog id="log__in--modal">
             <form method="dialog" class="flex gap-4 p-4 flex-row">
                 <label>
                     <input class="input__login" type="text" placeholder="Username">
                 </label>
                 <label>
-                    <input class="input__login" type="password" placeholder="*****">
+                    <input class="input__login" type="current-password" placeholder="*****">
                 </label>
             </form>
-            <button class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
-        </dialog> -->
-        <!-- <dialog id="signup--modal" class="modal">
+            <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
+        </dialog>
+        <dialog id="sign__up--modal">
             <form method="dialog" class="flex gap-4 p-4 flex-col">
                 <label>
                     <input class="input__sign-up" type="text" placeholder="Username">
                 </label>
                 <label>
-                    <input class="input__sign-up" type="password" placeholder="*****">
+                    <input class="input__sign-up" type="current-password" placeholder="*****">
                 </label>
                 <label>
-                    <input class="input__sign-up" type="password" placeholder="*****">
+                    <input class="input__sign-up" type="current-password" placeholder="*****">
                 </label>
             </form>
-            <button class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
-        </dialog> -->
+            <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
+        </dialog>
         <hero class="grid grid-flow-col grid-cols-[minmax(555px,_40%)_1fr]">
             <section class="left | flex flex-col justify-center items-center pt-32">
                 <div class="image | ">
@@ -61,8 +61,8 @@
             </section>
             <section class="right | flex justify-center">
                 <div class="title | flex flex-col mr-5 mt-[14rem] max-w-5xl px-3 text-center justify-between">
-                    <h2 class="text-[length:var(--heading)]">
-                        Your Workouts Easily
+                    <h2 class="text-[length:var(--heading--sm)] laptop:text-[length:var(--heading)]">
+                        Log Your Workouts Easily
                         <br>
                         Keep Everything in one place
                         <br>
