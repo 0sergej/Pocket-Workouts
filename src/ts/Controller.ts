@@ -8,8 +8,6 @@ const init = function ()
 {
     logInView.addHandlerLogIn()
     logInView.addHandlerSignUp()
-    console.log(1);
-
 };
 
 init();

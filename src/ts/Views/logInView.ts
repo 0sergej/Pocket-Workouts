@@ -1,30 +1,25 @@
 class logInView {
 
-    #logInButtons = document.querySelectorAll('#log__in--btn');
-    #signUpButtons = document.querySelectorAll('#sign__up--btn');
+    #logInButtons = Array.from(document.querySelectorAll('#log__in--btn'));
+    #signUpButtons = Array.from(document.querySelectorAll('#sign__up--btn'));
     logInModal = document.querySelector('#log__in--modal');
     signUpModal = document.querySelector('#sign__up--modal');
 
     addHandlerLogIn() {
-        this.#logInButtons[0]?.addEventListener('click', this.#showLogInModal.bind(this));
-        this.#logInButtons[1]?.addEventListener('click', this.#showLogInModal.bind(this));
-
+        this.#bindButtons(this.#logInButtons, () => this.#showModal(this.logInModal, this.signUpModal))
     }
 
     addHandlerSignUp() {
-        this.#signUpButtons[0]?.addEventListener('click', this.#showSignUpModal.bind(this));
-        this.#signUpButtons[1]?.addEventListener('click', this.#showSignUpModal.bind(this));
+        this.#bindButtons(this.#signUpButtons, () => this.#showModal(this.signUpModal, this.logInModal))
     }
 
-    #showLogInModal() {
-        this.signUpModal?.classList.remove('modal')
-
-        this.logInModal?.classList.toggle('modal')
+    #showModal(showModal: Element | null, hideModal: Element | null) {
+        hideModal?.classList.remove('modal')
+        showModal?.classList.toggle('modal')
     }
 
-    #showSignUpModal() {
-        this.logInModal?.classList.remove('modal')
-        this.signUpModal?.classList.toggle('modal')
+    #bindButtons(btnType: Element[], modalType: any) {
+        btnType.map(btn => btn.addEventListener('click', modalType?.bind(this)));
     }
 
 }
