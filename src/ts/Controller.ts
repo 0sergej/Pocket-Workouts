@@ -1,13 +1,15 @@
-import ShowModel from "./Views/ShowModelView";
-import logInView from './Views/logInView'
+import logInModalsView from './Views/logInModalsView'
+import logInDetailsView from './Views/logInDetailsView'
 
 const controlShowModel = function () {
 };
 
 const init = function ()
 {
-    logInView.addHandlerLogIn()
-    logInView.addHandlerSignUp()
+    logInModalsView.addHandlerLogIn()
+    logInModalsView.addHandlerSignUp();
+    logInDetailsView.returnLogInData();
+    logInDetailsView.returnSignUpData();
 };
 
 init();
