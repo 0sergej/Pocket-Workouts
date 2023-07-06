@@ -24,10 +24,15 @@
         <dialog id="log__in--modal">
             <form method="dialog" class="flex gap-4 p-4 flex-row">
                 <label>
-                    <input class="input__login" type="text" placeholder="Username">
+                    <input id="log__in--username" class="input__login" type="text" placeholder="Username"
+                    autocomplete="username"
+                    required>>
                 </label>
                 <label>
-                    <input class="input__login" type="current-password" placeholder="*****">
+                    <input id="log__in--password" class="input__login" type="password" placeholder="*****"
+                    autocomplete="current-password"
+                    required
+                    >
                 </label>
             </form>
             <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
@@ -35,13 +40,20 @@
         <dialog id="sign__up--modal">
             <form method="dialog" class="flex gap-4 p-4 flex-col">
                 <label>
-                    <input class="input__sign-up" type="text" placeholder="Username">
+                    <input id="sign__up--username" class="input__sign-up" type="text" placeholder="Username"
+                    autocomplete="username"
+                    required>
                 </label>
                 <label>
-                    <input class="input__sign-up" type="current-password" placeholder="*****">
+                    <input id="sign__up--password" class="input__sign-up" type="password"
+                    placeholder="*****"
+                    autocomplete="new-password"
+                    required>
                 </label>
                 <label>
-                    <input class="input__sign-up" type="current-password" placeholder="*****">
+                    <input id="sign__up--password__repeat" class="input__sign-up" type="password" placeholder="*****"
+                    autocomplete="new-password"
+                    required>>
                 </label>
             </form>
             <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
