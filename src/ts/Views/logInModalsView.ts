@@ -1,16 +1,17 @@
-class logInView {
+class logInModalsView {
 
-    #logInButtons = Array.from(document.querySelectorAll('#log__in--btn'));
-    #signUpButtons = Array.from(document.querySelectorAll('#sign__up--btn'));
+    logInButtons = Array.from(document.querySelectorAll('#log__in--btn'));
+    signUpButtons = Array.from(document.querySelectorAll('#sign__up--btn'));
     logInModal = document.querySelector('#log__in--modal');
     signUpModal = document.querySelector('#sign__up--modal');
 
     addHandlerLogIn() {
-        this.#bindButtons(this.#logInButtons, () => this.#showModal(this.logInModal, this.signUpModal))
+        this.#bindButtons(this.logInButtons, () => this.#showModal(this.logInModal, this.signUpModal))
+
     }
 
     addHandlerSignUp() {
-        this.#bindButtons(this.#signUpButtons, () => this.#showModal(this.signUpModal, this.logInModal))
+        this.#bindButtons(this.signUpButtons, () => this.#showModal(this.signUpModal, this.logInModal))
     }
 
     #showModal(showModal: Element | null, hideModal: Element | null) {
@@ -24,4 +25,4 @@ class logInView {
 
 }
 
-export default new logInView();
+export default new logInModalsView();
