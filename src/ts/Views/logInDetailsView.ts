@@ -14,8 +14,6 @@ class logInDetailsView {
 
 			this.#clearData();
 
-			console.log(logInData);
-
 			handler(logInData);
 		});
 
@@ -28,28 +26,6 @@ class logInDetailsView {
 			handler(logInData);
 		});
     }
-
-	#returnLogInData() {
-		logInModalsView.logInButtons[1].addEventListener('click', () => {
-			//HACK any
-			const logInData: any = this.#getData(true);
-
-            this.#clearData();
-
-            console.log(logInData);
-
-			return logInData;
-		});
-
-		logInModalsView.signUpButtons[1].addEventListener('click', () => {
-			//HACK any
-			const logInData: any = this.#getData(false);
-
-			this.#clearData();
-
-			return logInData;
-		});
-	}
 
 	#getData(existingUser: boolean): Object {
         return {
