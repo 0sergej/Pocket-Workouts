@@ -4,6 +4,7 @@ class logInModalsView {
 	signOutButton = document.querySelector('#sign__out--btn');
 	logInModal = document.querySelector('#log__in--modal');
 	signUpModal = document.querySelector('#sign__up--modal');
+	logInHeaderContainter = document.querySelector('#log__in---header');
 
 	addHandlerLogIn() {
 		this.#bindButtons(this.logInButtons, () => this.#showModal(this.logInModal, this.signUpModal));
@@ -13,10 +14,10 @@ class logInModalsView {
 		this.#bindButtons(this.signUpButtons, () => this.#showModal(this.signUpModal, this.logInModal));
 	}
 
-	addHandlerSignOut(handler: Function) {
+	addHandlerSignOut() {
 		this.signOutButton?.addEventListener('click', () => {
 			this.#logOut();
-			handler();
+			this.logInHeaderContainter?.classList.add('hidden');
 		});
 	}
 
@@ -30,6 +31,18 @@ class logInModalsView {
 		this.logInButtons[0].classList.remove('hidden');
 		this.signUpButtons[0].classList.remove('hidden');
 		this.signOutButton?.classList.add('hidden');
+		this.#logOutHeader();
+	}
+
+	//HACK any
+	logInHeader(logInData: any) {
+		this.logInHeaderContainter?.classList.remove('hidden');
+		const logInMessage = this.logInHeaderContainter?.children[0] as HTMLElement;
+		logInMessage.textContent = `Welcome ${logInData.username}`;
+	}
+
+	#logOutHeader() {
+		this.logInHeaderContainter?.classList.add('hidden');
 	}
 
 	#showModal(showModal: Element | null, hideModal: Element | null) {
