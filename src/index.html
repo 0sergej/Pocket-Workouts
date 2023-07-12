@@ -11,12 +11,15 @@
         <title>Pocket Workouts - Welcome!</title>
     </head>
     <body class="bg-[var(--background)]">
-        <header class="flex h-24 pl-10 pr-20 justify-between content-center bg-[var(--primary)]">
-            <div id="logo-container" class="flex gap-5">
+        <header class="flex h-24 pl-10 pr-20 content-center bg-[var(--primary)]">
+            <div id="logo-container" class="flex gap-5 mr-auto scale-75 phone:scale-100">
                 <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
-                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] xl:text-[length:var(--heading)] self-center">Pocket Workouts</h1>
+                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts</h1>
             </div>
-            <div id="buttons-container" class="flex justify-end gap-12 items-center">
+            <div id="log__in---header" class="self-center mr-6 hidden">
+                <h2 class="text-[var(--accent)] text-[length:var(--sub-heading--sm)]">Welcome Message</h2>
+            </div>
+                <div id="buttons-container" class="flex gap-12 self-center">
                 <button id="log__in--btn" class="btn--accent">Log In</button>
                 <button id="sign__up--btn" class="btn--accent">Sign Up</button>
                 <button id="sign__out--btn" class="btn--accent | hidden">Sign out</button>
@@ -59,22 +62,22 @@
             </form>
             <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
         </dialog>
-        <hero class="grid grid-flow-col grid-cols-[minmax(555px,_40%)_1fr]">
-            <section class="left | flex flex-col justify-center items-center pt-32">
-                <div class="image | ">
-                    <img class="border-[var(--primary)] border-4 w-[30rem]" src="../assets/png/ScreenShot_1.png" alt="Program Template Example">
+        <hero class="grid phone:grid-flow-col phone:grid-cols-[minmax(555px,_40%)_1fr]">
+            <section class="left | flex flex-col justify-center items-center pt-12 phone:pt-32">
+                <div class="image">
+                    <img class="border-[var(--primary)] border-4 w-[17rem] tablet:w-[20rem] laptop:w-[30rem]" src="../assets/png/ScreenShot_1.png" alt="Program Template Example">
                 </div>
-                <div class="flex gap-10 mt-8">
-                    <div class="dot-1 bg-[var(--accent)]  w-8 h-8 rounded-full"></div>
-                    <div class="dot-4 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
-                    <div class="dot-3 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
-                    <div class="dot-2 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
-                    <div class="dot-5 bg-[var(--primary)] w-8 h-8 rounded-full"></div>
+                <div class="flex gap-4 laptop:gap-10 tablet:gap-6 mt-8">
+                    <div class="dot-1 bg-[var(--accent)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
+                    <div class="dot-4 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
+                    <div class="dot-3 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
+                    <div class="dot-2 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
+                    <div class="dot-5 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
                 </div>
             </section>
-            <section class="right | flex justify-center">
-                <div class="title | flex flex-col mr-5 mt-[14rem] max-w-5xl px-3 text-center justify-between">
-                    <h2 class="text-[length:var(--heading--sm)] laptop:text-[length:var(--heading)]">
+            <section class="right | flex items-center justify-center mt-12 phone:mt-0">
+                <div class="title | flex flex-col mr-5 max-w-5xl px-3 text-center">
+                    <h2 class="text-[length:1.5rem]  tablet:text-[length:var(--heading--sm)] laptop:text-[length:var(--heading)] mb-8">
                         Log Your Workouts Easily
                         <br>
                         Keep Everything in one place
@@ -85,7 +88,7 @@
                             Pocket!
                         </span>
                     </h2>
-                    <h3 class="text-[length:var(--sub-heading)]">
+                    <h3 class="text-[length:var(--sub-heading-sm)] tablet:text-[length:1.5rem] laptop:text-[length:var(--heading--sm)]">
                         Log In and Make Your
                         <span class="text-[color:var(--accent)]">
                             Own Custom

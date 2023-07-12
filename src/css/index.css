@@ -6,7 +6,7 @@
     --accent:hsl(200, 91%, 53%);
     --primary:hsl(222, 53%, 20%);
     --background:hsl(1, 0%, 85%);
-    
+
 
     --heading:3rem;
     --sub-heading:1.75rem;
@@ -15,7 +15,7 @@
     --heading--sm:2rem;
     --sub-heading--sm:1.25rem;
     --text--sm:1rem;
-    
+
     --heading-lh:1.5;
     --text-lh:1.75
 }
