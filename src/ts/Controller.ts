@@ -4,6 +4,7 @@ import * as Model from './Model';
 
 const controlLogIn = function (logInData: any) {
     const logInResult = Model.logInDataCheck(logInData);
+    console.log(logInResult);
     if (logInResult === true)
     {
         logInModalsView.login();
