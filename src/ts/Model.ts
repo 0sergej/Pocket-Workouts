@@ -1,29 +1,25 @@
 //HACK any
 export const logInDataCheck = function (logInData: any) {
-	const errMessage = `Error, username or password are incorrect. Please try again.`;
+	let logInResult;
 	// Check if the user has an account
 	if (logInData.existingUser === true) {
-		// Check if the user's username and password is correct
 		const accountsJSON = localStorage.getItem('logInData[]');
-
-		// If storage exists, check if the user exists.
 		if (accountsJSON) {
 			const accountsArr = JSON.parse(accountsJSON);
-
-			return checkIfUserExists(accountsArr, logInData) === true ? true : errMessage;
+			logInResult = checkIfUserExists(accountsArr, logInData);
 		}
-
-		return errMessage;
-	}
-	// If the user is new
-	else if (logInData.existingUser === false) {
-		// Check if password's match
-		const logInResult = checkPasswords(logInData);
-		// Save User's Data
-		makeUser(logInData);
-
 		return logInResult;
 	}
+	// Check if username and password are of appropriate format
+	logInResult = checkFormat(logInData);
+	console.log(logInResult);
+	// Check if password's match
+	if (logInResult === true) logInResult = checkPasswords(logInData);
+	// Check if username is already taken
+	if (logInResult === true) logInResult = checkIfUsernameExists(logInData);
+	// Save User's Data
+	if (logInResult === true) makeUser(logInData);
+	return logInResult;
 };
 
 //HACK any
@@ -32,19 +28,11 @@ const checkIfUserExists = function (accountsArr: any, logInData: any) {
 	//HACK any
 	accountsArr.map((account: any) => {
 		if (account.username === logInData.username && account.password === logInData.password) {
-			console.log(1);
 			accountExists = true;
 		}
 	});
 
 	if (accountExists) return accountExists;
-};
-
-//HACK any
-const checkPasswords = function (accountsArr: any) {
-	if (accountsArr.password !== accountsArr.passwordRepeat) return 'Passwords do not match. Please check your password and try again.';
-
-	return true;
 };
 
 //HACK any
@@ -64,4 +52,26 @@ const makeUser = function (logInData: any) {
 	}
 
 	localStorage.setItem('logInData[]', JSON.stringify([logInData]));
+};
+
+//HACK any
+const checkFormat = function (logInData: any) {
+	const usernameLength: boolean = logInData.username.length > 3 && logInData.username.length < 13;
+	const passwordLength: boolean = logInData.password.length > 3 && logInData.password.length < 13;
+	const passwordCapital: boolean = /[A-Z]/.test(logInData.password) && /[a-z]/.test(logInData.password);
+	return usernameLength && passwordLength && passwordCapital ? true : `Username and password must be at least 4 characters long, and password must contain small and capital letters`;
+};
+
+//HACK any
+const checkPasswords = function (logInResult: any) {
+	return logInResult.password === logInResult.passwordRepeat ? true : 'Passwords do not match. Please check your password and try again.';
+};
+
+//HACK any
+const checkIfUsernameExists = function (logInData: any) {
+	const accountsJSON = localStorage.getItem('logInData[]');
+	if (accountsJSON) {
+		const accountsArr = JSON.parse(accountsJSON);
+		return accountsArr.some((account) => account.username.value === logInData.username.value) ? 'Username is already taken. Please try something different :}' : true;
+	}
 };
