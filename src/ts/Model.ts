@@ -16,7 +16,6 @@ export const logInDataCheck = function (logInData: any) {
 	if (logInResult === true) logInResult = checkPasswords(logInData);
 	// Check if username is already taken
 	if (logInResult === true) logInResult = checkIfUsernameExists(logInData);
-	console.log(logInResult);
 	// Save User's Data
 	if (logInResult === true) makeUser(logInData);
 	return logInResult;
@@ -71,8 +70,7 @@ const checkPasswords = function (logInResult: any) {
 const checkIfUsernameExists = function (logInData: any) {
 	const accountsJSON = localStorage.getItem('logInData[]');
 	if (accountsJSON) {
-        const accountsArr = JSON.parse(accountsJSON);
-        return accountsArr.some((account) =>  account.username === logInData.username
-        ) ? 'Username is already taken. Please try something different :}' : true;
+		const accountsArr = JSON.parse(accountsJSON);
+        return accountsArr.some((account) => account.username === logInData.username) ? 'Username is already taken. Please try something different :}' : true;
 	}
 };
