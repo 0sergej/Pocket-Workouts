@@ -8,23 +8,23 @@ class logInDetailsView {
     #signUpPasswordRepeat = <HTMLInputElement>document.querySelector('#sign__up--password__repeat');
 
     addLogInHandler(handler: Function) {
-		logInModalsView.logInButtons[1].addEventListener('click', () => {
-			//HACK any
-			const logInData: any = this.#getData(true);
+        logInModalsView.logInButtons[1].addEventListener('click', () => {
+            //HACK any
+            const logInData: any = this.#getData(true);
 
-			this.#clearData();
+            this.#clearData();
 
-			handler(logInData);
-		});
+            handler(logInData);
+        });
 
-		logInModalsView.signUpButtons[1].addEventListener('click', () => {
-			//HACK any
-			const logInData: any = this.#getData(false);
+        logInModalsView.signUpButtons[1].addEventListener('click', () => {
+            //HACK any
+            const logInData: any = this.#getData(false);
 
-			this.#clearData();
+            this.#clearData();
 
-			handler(logInData);
-		});
+            handler(logInData);
+        });
     }
 
 	#getData(existingUser: boolean): Object {
