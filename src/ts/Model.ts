@@ -1,21 +1,21 @@
 //HACK any
 export const logInDataCheck = function (logInData: any) {
-	let logInResult;
+	let logInResult: string | boolean = false;
 	// Check if the user has an account
 	if (logInData.existingUser === true) {
 		const accountsJSON = localStorage.getItem('logInData[]');
 		if (accountsJSON) {
 			const accountsArr = JSON.parse(accountsJSON);
 			logInResult = checkIfUserExists(accountsArr, logInData);
-		}
-		return logInResult;
+        }
+		return logInResult === false ? `Wrong username or password :K` : logInData;
 	}
 	// Check if username and password are of appropriate format
 	logInResult = checkFormat(logInData);
 	// Check if password's match
 	if (logInResult === true) logInResult = checkPasswords(logInData);
 	// Check if username is already taken
-	if (logInResult === true) logInResult = checkIfUsernameExists(logInData);
+	if (logInResult === true) logInResult === checkIfUsernameExists(logInData);
 	// Save User's Data
 	if (logInResult === true) makeUser(logInData);
 	return logInResult;
@@ -30,8 +30,7 @@ const checkIfUserExists = function (accountsArr: any, logInData: any) {
 			accountExists = true;
 		}
 	});
-
-	if (accountExists) return accountExists;
+	return accountExists;
 };
 
 //HACK any
@@ -58,12 +57,12 @@ const checkFormat = function (logInData: any) {
 	const usernameLength: boolean = logInData.username.length > 3 && logInData.username.length < 13;
 	const passwordLength: boolean = logInData.password.length > 3 && logInData.password.length < 13;
 	const passwordCapital: boolean = /[A-Z]/.test(logInData.password) && /[a-z]/.test(logInData.password);
-	return usernameLength && passwordLength && passwordCapital ? true : `Username and password must be at least 4 characters long, and password must contain small and capital letters`;
+	return usernameLength && passwordLength && passwordCapital ? true : `Username and password must be at least 4 characters long, and password must contain small and capital letters <:`;
 };
 
 //HACK any
 const checkPasswords = function (logInResult: any) {
-	return logInResult.password === logInResult.passwordRepeat ? true : 'Passwords do not match. Please check your password and try again.';
+	return logInResult.password === logInResult.passwordRepeat ? true : 'Passwords do not match. Please check your password and try again =>';
 };
 
 //HACK any
@@ -71,6 +70,7 @@ const checkIfUsernameExists = function (logInData: any) {
 	const accountsJSON = localStorage.getItem('logInData[]');
 	if (accountsJSON) {
 		const accountsArr = JSON.parse(accountsJSON);
-        return accountsArr.some((account) => account.username === logInData.username) ? 'Username is already taken. Please try something different :}' : true;
+		return accountsArr.some((account) => account.username === logInData.username) ? 'Username is already taken. Please try something different :}' : true;
 	}
+	return true;
 };
