@@ -26,7 +26,7 @@
     }
 }
 
-@layer utilities{
+@layer components{
     .btn--accent{
         padding-inline: 2rem;
         height: 2.25rem;
@@ -57,6 +57,71 @@
         margin-inline:0;
         min-width: max-content;
     }
+
+    .closing--X{
+        position: absolute;
+        width: 1.25rem;
+        height: 1.25rem;
+        inset: 0.5rem 0.5rem auto auto;
+        border-radius: 2px;
+    }
+    .closing--X::before{
+        content: '';
+        display: block;
+        position: relative;
+        width: 0.25rem;
+        height: 1.25rem;
+        left: 0.5rem;
+        background-color: var(--accent);
+        border-radius: 2px;
+        transform: rotate(315deg);
+    }
+    .closing--X::after{
+        content: '';
+        display: block;
+        position: relative;
+        width: 0.25rem;
+        height: 1.25rem;
+        left: 0.5rem;
+        bottom: 1.25rem;
+        background-color: var(--accent);
+        border-radius: 2px;
+        transform: rotate(45deg);
+    }
+
+    .closing--X__dark{
+        position: absolute;
+        width: 1.25rem;
+        height: 1.25rem;
+        inset: 0.5rem 0.5rem auto auto;
+        border-radius: 2px;
+    }
+    .closing--X__dark::before{
+        content: '';
+        display: block;
+        position: relative;
+        width: 0.25rem;
+        height: 1.25rem;
+        left: 0.5rem;
+        background-color: var(--primary);
+        border-radius: 2px;
+        transform: rotate(315deg);
+    }
+    .closing--X__dark::after{
+        content: '';
+        display: block;
+        position: relative;
+        width: 0.25rem;
+        height: 1.25rem;
+        left: 0.5rem;
+        bottom: 1.25rem;
+        background-color: var(--primary);
+        border-radius: 2px;
+        transform: rotate(45deg);
+    }
+}
+
+@layer utilities{
 
     .input__login,
     .input__sign-up{
