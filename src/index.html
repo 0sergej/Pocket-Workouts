@@ -16,21 +16,26 @@
                 <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
                 <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts</h1>
             </div>
-            <div id="log__in---header" class="self-center mr-6 hidden">
+            <div id="log__in--header" class="self-center mr-6 hidden">
                 <h2 class="text-[var(--accent)] text-[length:var(--sub-heading--sm)]">Welcome Message</h2>
             </div>
                 <div id="buttons-container" class="flex gap-12 self-center">
-                <button id="log__in--btn" class="btn--accent">Log In</button>
-                <button id="sign__up--btn" class="btn--accent">Sign Up</button>
+                <button id="log__in--btn" class="btn--accent ">Log In</button>
+                <button id="sign__up--btn" class="btn--accent ">Sign Up</button>
                 <button id="sign__out--btn" class="btn--accent | hidden">Sign out</button>
             </div>
+            <div id="error__message--div" class="w-1/3 h-32 rounded-md bg-[var(--accent)] absolute top-20 left-1/3 opacity-0">
+                <p id="error__message--paragragh" class="text-white text-[length:var(--text--sm)] leading-[var(--text-lh)] h-full flex items-center justify-items-center mx-auto w-max p-4 max-w-fit">
+                </p>
+                <div id="error__message--closing__X" class="closing--X__dark cursor-pointer" ></div>
+            </div>
         </header>
-        <dialog id="log__in--modal">
+        <dialog id="log__in--modal" class="fade-out-element modal">
             <form method="dialog" class="flex gap-4 p-4 flex-row">
                 <label>
                     <input id="log__in--username" class="input__login" type="text" placeholder="Username"
                     autocomplete="username"
-                    required>>
+                    required>
                 </label>
                 <label>
                     <input id="log__in--password" class="input__login" type="password" placeholder="*****"
@@ -38,10 +43,11 @@
                     required
                     >
                 </label>
+                <label id="log__in--closing__X" class="closing--X cursor-pointer" ></label>
             </form>
             <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
         </dialog>
-        <dialog id="sign__up--modal">
+        <dialog id="sign__up--modal"  class="fade-out-element modal">
             <form method="dialog" class="flex gap-4 p-4 flex-col">
                 <label>
                     <input id="sign__up--username" class="input__sign-up" type="text" placeholder="Username"
@@ -59,20 +65,21 @@
                     autocomplete="new-password"
                     required>>
                 </label>
+                <label id="sign__up--closing__X" class="closing--X cursor-pointer" ></label>
             </form>
             <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
         </dialog>
         <hero class="grid phone:grid-flow-col phone:grid-cols-[minmax(555px,_40%)_1fr]">
             <section class="left | flex flex-col justify-center items-center pt-12 phone:pt-32">
                 <div class="image">
-                    <img class="border-[var(--primary)] border-4 w-[17rem] tablet:w-[20rem] laptop:w-[30rem]" src="../assets/png/ScreenShot_1.png" alt="Program Template Example">
+                    <img id="slidingImg" class="border-[var(--primary)] border-4 w-[17rem] tablet:w-[20rem] laptop:w-[30rem]" src="../assets/png/SlidingImage_1.png" alt="Program Template Example">
                 </div>
                 <div class="flex gap-4 laptop:gap-10 tablet:gap-6 mt-8">
-                    <div class="dot-1 bg-[var(--accent)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
-                    <div class="dot-4 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
-                    <div class="dot-3 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
-                    <div class="dot-2 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
-                    <div class="dot-5 bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full"></div>
+                    <div id="dot" class="bg-[var(--accent)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full cursor-default" data-dot="1"></div>
+                    <div id="dot" class="bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full cursor-pointer" data-dot="2"></div>
+                    <div id="dot" class="bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full cursor-pointer" data-dot="3"></div>
+                    <div id="dot" class="bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full cursor-pointer" data-dot="4"></div>
+                    <div id="dot" class="bg-[var(--primary)] laptop:w-8 laptop:h-8 tablet:w-6 tablet:h-6 w-4 h-4 rounded-full cursor-pointer" data-dot="5"></div>
                 </div>
             </section>
             <section class="right | flex items-center justify-center pt-32 phone:mt-0">
