@@ -16,10 +16,15 @@ const controlLogIn = function (logInData: any) {
 };
 
 const init = function () {
-	logInModalsView.addHandlerLogIn();
+    logInModalsView.addHandlerLogIn();
 	logInModalsView.addHandlerSignUp();
 	logInModalsView.addHandlerSignOut();
+	logInModalsView.addHandlerCloseLogIn();
+	logInModalsView.addHandlerCloseSignUp();
 	logInDetailsView.addLogInHandler(controlLogIn);
+    errorMessageView.addHandlerCloseErrorMessage();
+    slidingImagesView.addHandlerStarsInterval()
+    slidingImagesView.addHanhlerDotClick();
 };
 
 init();
