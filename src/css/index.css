@@ -131,3 +131,37 @@
         border-radius: 0.375rem;
     }
 }
+
+ @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+ @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+
+    /* Styling for the element */
+    .fade-in-element {
+      animation: 200ms fade-in linear forwards;
+    }
+
+    .fade-out-element {
+        animation: 200ms fade-out linear forwards;
+    }
+
+    .fade-up-element {
+
+    }
