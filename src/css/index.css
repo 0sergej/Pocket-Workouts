@@ -37,6 +37,7 @@
 
     .btn--accent:hover{
         color: white;
+        @apply animate-pulse;
     }
 
     @media (min-width: 1280px) {
