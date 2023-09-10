@@ -1,7 +1,7 @@
 import { SLIDING_IMAGE_INTERVAl, SLIDING_IMAGE_TIMER } from '../Helper';
 
 class slidingImagesView {
-	#slidingImage = document.querySelector('#slidingImg');
+	#slidingImage = Array.from(document.querySelectorAll('#slidingImg'));
 	#dots = Array.from(document.querySelectorAll('#dot'));
 
 	#activeDot: Element | null | undefined = this.#dots[0];
@@ -9,7 +9,7 @@ class slidingImagesView {
 	#interval: any;
 
 	addHandlerStarsInterval() {
-		this.#interval = setInterval(this.#setInterval.bind(this), SLIDING_IMAGE_INTERVAl); // FIXME helper import
+		this.#interval = setInterval(this.#setInterval.bind(this), SLIDING_IMAGE_INTERVAl);
 	}
 
 	addHanhlerDotClick() {
@@ -24,7 +24,7 @@ class slidingImagesView {
 		// Stop interval timer
 		clearInterval(this.#interval);
 		// Start clickedTimer
-		this.#interval = setTimeout(this.#clickedTimer.bind(this), SLIDING_IMAGE_TIMER); // FIXME helper import
+		this.#interval = setTimeout(this.#clickedTimer.bind(this), SLIDING_IMAGE_TIMER);
 
 		// Check if the dot is not active
 		if (newActiveDot.classList.contains(`cursor-pointer`)) {
@@ -57,12 +57,16 @@ class slidingImagesView {
 		this.#activeDot?.classList.replace('cursor-pointer', 'cursor-default');
 	}
 
-    #changeImage() {
-		let oldURL: string = this.#slidingImage?.getAttribute(`src`) as string;
+	#changeImage() {
+		// Get active image (! is to check for an active image)
+		const oldImage = this.#slidingImage?.find((img) => !img.classList.contains('hidden'));
 
-		const newURL = oldURL?.replace(`_${this.#oldActiveDot?.getAttribute('data-dot')}`, `_${this.#activeDot?.getAttribute('data-dot')}`);
+		// Get image that ceresponds to a new active dot
+		const newImage = this.#slidingImage?.find((img) => img.getAttribute('data-image') === this.#activeDot?.getAttribute('data-dot'));
 
-        this.#slidingImage?.setAttribute('src', newURL);
+		// Swap thems
+		oldImage?.classList.toggle('hidden', true);
+		newImage?.classList.toggle('hidden', false);
 	}
 
 	#setInterval() {
