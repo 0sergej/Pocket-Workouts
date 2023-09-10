@@ -1,3 +1,4 @@
-export const SLIDING_IMAGE_TIMER = 5000;
+export const SLIDING_IMAGE_INTERVAl = 3000;
+export const SLIDING_IMAGE_TIMER = 10000;
 
 export const ERROR_MESSAGE_TIMER = 3000;
