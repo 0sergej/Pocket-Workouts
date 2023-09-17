@@ -43,6 +43,21 @@ export const logInDataCheck = function (logInData: any) {
 	if (logInResult === true) makeUser();
 	return logInResult;
 };
+export const changeUsername = function (newUsername: string) {
+	const accountsJSON = localStorage.getItem('account[]');
+	if (accountsJSON) {
+		let j: number = -1;
+		const accountsArr = JSON.parse(accountsJSON);
+		const activeAccount = accountsArr.find((acc) => {
+			j++;
+			return acc.loggedIn === true;
+		});
+		activeAccount.customeUsername = newUsername;
+		accountsArr.splice(j, 1, activeAccount);
+
+		return activeAccount.customeUsername;
+	}
+};
 
 //HACK any
 const checkIfUserExists = function (accountsArr: any) {

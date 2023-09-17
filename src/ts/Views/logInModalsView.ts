@@ -49,10 +49,8 @@ class logInModalsView {
 	}
 
 	//HACK any
-	logInHeader(logInData: any) {
+	logInHeader() {
 		this.logInHeaderContainter?.classList.remove('hidden');
-		const logInMessage = this.logInHeaderContainter?.children[0] as HTMLElement;
-		logInMessage.textContent = `Welcome ${logInData.username}`;
 	}
 
 	#logOutHeader() {
@@ -73,7 +71,7 @@ class logInModalsView {
 	#closeModal(modal: Element | null) {
 		modal?.classList.toggle('fade-in-element', false);
 		modal?.classList.toggle('fade-out-element', true);
-}
+	}
 }
 
 export default new logInModalsView();
