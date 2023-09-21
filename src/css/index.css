@@ -5,7 +5,7 @@
 :root {
 	--accent: hsl(200, 91%, 53%);
 	--primary: hsl(222, 53%, 20%);
-	--background: hsl(1, 0%, 85%);
+	--background: hsl(0, 0%, 85%);
 
 	--heading: 3rem;
 	--sub-heading: 1.75rem;
