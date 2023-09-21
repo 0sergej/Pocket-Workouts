@@ -1,60 +1,63 @@
 class logInModalsView {
 	logInButtons = Array.from(document.querySelectorAll('#log__in--btn'));
 	signUpButtons = Array.from(document.querySelectorAll('#sign__up--btn'));
-	signOutButton = document.querySelector('#sign__out--btn');
-	logInModal = document.querySelector('#log__in--modal');
-	signUpModal = document.querySelector('#sign__up--modal');
-	logInHeaderContainter = document.querySelector('#log__in--header');
+	#signOutButton = document.querySelector('#sign__out--btn');
+	#makeTemplate = document.getElementById('template--btn');
+	#logInModal = document.querySelector('#log__in--modal');
+	#signUpModal = document.querySelector('#sign__up--modal');
+	#logInHeaderContainter = document.querySelector('#log__in--header');
 	#closingXLogIn = document.getElementById('log__in--closing__X');
 	#closingXSignUp = document.getElementById('sign__up--closing__X');
 
 	addHandlerLogIn() {
-		this.#bindButtons(this.logInButtons, () => this.#showModal(this.logInModal, this.signUpModal));
+		this.#bindButtons(this.logInButtons, () => this.#showModal(this.#logInModal, this.#signUpModal));
 	}
 
 	addHandlerSignUp() {
-		this.#bindButtons(this.signUpButtons, () => this.#showModal(this.signUpModal, this.logInModal));
+		this.#bindButtons(this.signUpButtons, () => this.#showModal(this.#signUpModal, this.#logInModal));
 	}
 
 	addHandlerSignOut() {
-		this.signOutButton?.addEventListener('click', () => {
+		this.#signOutButton?.addEventListener('click', () => {
 			this.#logOut();
-			this.logInHeaderContainter?.classList.add('hidden');
+			this.#logInHeaderContainter?.classList.add('hidden');
 		});
 	}
 
 	addHandlerCloseLogIn() {
 		this.#closingXLogIn?.addEventListener('click', () => {
-			this.#closeModal(this.logInModal);
+			this.#closeModal(this.#logInModal);
 		});
 	}
 
 	addHandlerCloseSignUp() {
 		this.#closingXSignUp?.addEventListener('click', () => {
-			this.#closeModal(this.signUpModal);
+			this.#closeModal(this.#signUpModal);
 		});
 	}
 
 	login() {
-		this.logInButtons[0].classList.add('hidden');
-		this.signUpButtons[0].classList.add('hidden');
-		this.signOutButton?.classList.remove('hidden');
+		this.logInButtons[0].classList.toggle('hidden', true);
+		this.signUpButtons[0].classList.toggle('hidden', true);
+		this.#signOutButton?.classList.toggle('hidden', false);
+		this.#makeTemplate?.classList.toggle('hidden', false);
 	}
 
 	#logOut() {
-		this.logInButtons[0].classList.remove('hidden');
-		this.signUpButtons[0].classList.remove('hidden');
-		this.signOutButton?.classList.add('hidden');
+		this.logInButtons[0].classList.toggle('hidden', false);
+		this.signUpButtons[0].classList.toggle('hidden', false);
+		this.#signOutButton?.classList.toggle('hidden', true);
+		this.#makeTemplate?.classList.toggle('hidden', true);
 		this.#logOutHeader();
 	}
 
 	//HACK any
 	logInHeader() {
-		this.logInHeaderContainter?.classList.remove('hidden');
+		this.#logInHeaderContainter?.classList.remove('hidden');
 	}
 
 	#logOutHeader() {
-		this.logInHeaderContainter?.classList.add('hidden');
+		this.#logInHeaderContainter?.classList.add('hidden');
 	}
 
 	#showModal(showModal: Element | null, hideModal: Element | null) {

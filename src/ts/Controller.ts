@@ -4,12 +4,13 @@ import * as Model from './Model';
 import errorMessageView from './Views/errorMessageView';
 import slidingImagesView from './Views/slidingImagesView';
 import usernameView from './Views/usernameView';
+import makeTemplateView from './Views/makeTemplateView';
 
 const controlLogIn = function (logInData: any) {
 	const logInResult = Model.logInDataCheck(logInData);
-    if (logInResult === true) {
+	if (logInResult === true) {
 		logInModalsView.login();
-        logInModalsView.logInHeader();
+		logInModalsView.logInHeader();
 		usernameView.handleWelcomeMessage(logInData.username);
 	}
 	if (logInResult !== true && typeof logInResult !== 'boolean') {
@@ -35,6 +36,7 @@ const init = function () {
 	slidingImagesView.addHanhlerDotClick();
 	usernameView.addHandlerUsernameChange(controlUsernameChange);
 	usernameView.addHandlerUsernameForm();
+	makeTemplateView.addHandlerMakeTamplate();
 };
 
 init();

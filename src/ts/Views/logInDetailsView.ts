@@ -1,38 +1,38 @@
 import logInModalsView from './logInModalsView';
 
 class logInDetailsView {
-    #logInUsername = <HTMLInputElement>document.querySelector('#log__in--username');
-    #logInPassword = <HTMLInputElement>document.querySelector('#log__in--password');
-    #signUpUsername = <HTMLInputElement>document.querySelector('#sign__up--username');
-    #signUpPassword = <HTMLInputElement>document.querySelector('#sign__up--password');
-    #signUpPasswordRepeat = <HTMLInputElement>document.querySelector('#sign__up--password__repeat');
+	#logInUsername = <HTMLInputElement>document.querySelector('#log__in--username');
+	#logInPassword = <HTMLInputElement>document.querySelector('#log__in--password');
+	#signUpUsername = <HTMLInputElement>document.querySelector('#sign__up--username');
+	#signUpPassword = <HTMLInputElement>document.querySelector('#sign__up--password');
+	#signUpPasswordRepeat = <HTMLInputElement>document.querySelector('#sign__up--password__repeat');
 
-    addLogInHandler(handler: Function) {
-        logInModalsView.logInButtons[1].addEventListener('click', () => {
-            //HACK any
-            const logInData: any = this.#getData(true);
+	addLogInHandler(handler: Function) {
+		logInModalsView.logInButtons[1].addEventListener('click', () => {
+			//HACK any
+			const logInData: any = this.#getData(true);
 
-            this.#clearData();
+			this.#clearData();
 
-            handler(logInData);
-        });
+			handler(logInData);
+		});
 
-        logInModalsView.signUpButtons[1].addEventListener('click', () => {
-            //HACK any
-            const logInData: any = this.#getData(false);
+		logInModalsView.signUpButtons[1].addEventListener('click', () => {
+			//HACK any
+			const logInData: any = this.#getData(false);
 
-            this.#clearData();
+			this.#clearData();
 
-            handler(logInData);
-        });
-    }
+			handler(logInData);
+		});
+	}
 
 	#getData(existingUser: boolean): Object {
-        return {
-            existingUser,
+		return {
+			existingUser,
 			username: existingUser ? this.#logInUsername.value : this.#signUpUsername.value,
 			password: existingUser ? this.#logInPassword.value : this.#signUpPassword.value,
-            passwordRepeat: this.#signUpPasswordRepeat.value,
+			passwordRepeat: this.#signUpPasswordRepeat.value,
 		};
 	}
 
