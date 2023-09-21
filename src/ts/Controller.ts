@@ -37,6 +37,10 @@ const init = function () {
 	usernameView.addHandlerUsernameChange(controlUsernameChange);
 	usernameView.addHandlerUsernameForm();
 	makeTemplateView.addHandlerMakeTamplate();
+
+	if (module.hot) {
+		module.hot.dispose(function () {});
+	}
 };
 
 init();

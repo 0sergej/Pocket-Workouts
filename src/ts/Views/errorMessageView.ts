@@ -13,7 +13,8 @@ class errorMessageView {
 		this.#errorMessageDiv?.classList.add('fade-in-element');
 		this.#errorMessageDiv?.classList.remove('fade-out-element');
 		this.#addErrorMessage(errMessage);
-		setTimeout(this.#hideErrorMessageBox.bind(this), ERROR_MESSAGE_TIMER);
+        setTimeout(this.#hideErrorMessageBox.bind(this), ERROR_MESSAGE_TIMER);
+        console.log(errMessage);
 	}
 
 	#hideErrorMessageBox() {
