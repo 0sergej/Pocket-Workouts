@@ -7,11 +7,13 @@ import usernameView from './Views/usernameView';
 import makeTemplateView from './Views/makeTemplateView';
 
 const controlLogIn = function (logInData: any) {
-	const logInResult = Model.logInDataCheck(logInData);
+	// HACK any
+    const [logInDataNew, logInResult]: any = Model.logInDataCheck(logInData);
+
 	if (logInResult === true) {
 		logInModalsView.login();
 		logInModalsView.logInHeader();
-		usernameView.handleWelcomeMessage(logInData.username);
+		usernameView.handleWelcomeMessage(logInDataNew);
 	}
 	if (logInResult !== true && typeof logInResult !== 'boolean') {
 		errorMessageView.showErrorMessageBox(logInResult);

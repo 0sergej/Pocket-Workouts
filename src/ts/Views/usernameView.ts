@@ -23,8 +23,11 @@ class usernameView {
 		this.#newUsername.value = ``;
 	}
 
-	handleWelcomeMessage(username) {
-		const logInMessage = this.#usernameSpan as HTMLElement;
+	// HACK any
+    handleWelcomeMessage(logInDataNew: any): void {
+        const logInMessage = this.#usernameSpan as HTMLElement;
+		let username: string = logInDataNew.customeUsername;
+        if (username === '') username = logInDataNew.username;
 		logInMessage.textContent = `${this.#usernameFormating(username)}`;
 	}
 

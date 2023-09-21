@@ -4,9 +4,10 @@ const account = {
 	password: '',
 	passwordRepeat: '',
 	customeUsername: '',
-	loggedIn: false,
 	id: 0,
 };
+
+let currentUser: any = {};
 
 //HACK any
 export const logInDataCheck = function (logInData: any) {
@@ -16,60 +17,78 @@ export const logInDataCheck = function (logInData: any) {
 	account.passwordRepeat = logInData.passwordRepeat as string;
 	account.customeUsername = logInData.username as string;
 
-	let logInResult: string | boolean = false;
+	let logInResult: string | boolean = true;
 
 	// Check if the user has an account
-	if (account.existingUser === true) {
-		const accountsJSON = localStorage.getItem('account[]');
-		if (accountsJSON) {
-			const accountsArr = JSON.parse(accountsJSON);
-			logInResult = checkIfUserExists(accountsArr);
-		}
+	if (account.existingUser) {
+		// HACK any
+		const userData: any = getUserData();
+		if (Object.keys(userData).length === 0) logInResult = `Wrong username or password :K`;
+		account.customeUsername = userData?.customeUsername;
 
-		return logInResult === false ? `Wrong username or password :K` : true;
+		currentUser = account;
+
+		return [account, logInResult];
 	}
+
 	// Check if username and password are of appropriate format
 	logInResult = checkFormat();
 	// Check if password's match
 	if (logInResult === true) logInResult = checkPasswords();
 	// Check if username is already taken
 	if (logInResult === true) logInResult = checkIfUsernameExists();
-	// Add Logged in tag and id
+	// Change Account hidden properties
 	if (logInResult === true) {
-		account.loggedIn = true;
-		account.id++;
+		account.id = Math.random();
+		account.existingUser = true;
 	}
 	// Save User's Data
 	if (logInResult === true) makeUser();
+	currentUser = account;
 	return logInResult;
 };
+
+const getUserData = function () {
+	let userData: object = {};
+	const accountsJSON = localStorage.getItem('account[]');
+	if (accountsJSON) {
+		const accountsArr = JSON.parse(accountsJSON);
+		userData = findUserData(accountsArr);
+	}
+	return userData;
+};
+
+//HACK any
+const findUserData = function (accountsArr: any) {
+	let accountData: object = {};
+
+	//HACK any
+	accountsArr.map((acc: any) => {
+		if (acc.username === account.username && acc.password === account.password) {
+			accountData = acc;
+		}
+	});
+	return accountData;
+};
+
 export const changeUsername = function (newUsername: string) {
 	const accountsJSON = localStorage.getItem('account[]');
 	if (accountsJSON) {
 		let j: number = -1;
 		const accountsArr = JSON.parse(accountsJSON);
-		const activeAccount = accountsArr.find((acc) => {
+
+		const activeAccount = accountsArr.find((acc: { id: any }) => {
 			j++;
-			return acc.loggedIn === true;
+			console.log(acc.id);
+			console.log(currentUser.id);
+			return acc.id === currentUser.id;
 		});
 		activeAccount.customeUsername = newUsername;
 		accountsArr.splice(j, 1, activeAccount);
+		localStorage.setItem('account[]', JSON.stringify(accountsArr));
 
-		return activeAccount.customeUsername;
+		return activeAccount;
 	}
-};
-
-//HACK any
-const checkIfUserExists = function (accountsArr: any) {
-	let accountExists: boolean = false;
-
-	//HACK any
-	accountsArr.map((acc: any) => {
-		if (acc.username === account.username && acc.password === account.password) {
-			accountExists = true;
-		}
-	});
-	return accountExists;
 };
 
 //HACK any
