@@ -3,7 +3,6 @@ class makeTemplateView {
 
 	addHandlerMakeTamplate() {
 		this.#makeTemplateBtn?.addEventListener('click', () => {
-			prompt();
 		});
 	}
 }
