@@ -5,10 +5,11 @@ import errorMessageView from './Views/errorMessageView';
 import slidingImagesView from './Views/slidingImagesView';
 import usernameView from './Views/usernameView';
 import makeTemplateView from './Views/makeTemplateView';
+import returnHome from './Views/returnHome';
 
 const controlLogIn = function (logInData: any) {
 	// HACK any
-    const [logInDataNew, logInResult]: any = Model.logInDataCheck(logInData);
+	const [logInDataNew, logInResult]: any = Model.logInDataCheck(logInData);
 
 	if (logInResult === true) {
 		logInModalsView.login();
@@ -39,6 +40,7 @@ const init = function () {
 	usernameView.addHandlerUsernameChange(controlUsernameChange);
 	usernameView.addHandlerUsernameForm();
 	makeTemplateView.addHandlerMakeTamplate();
+	returnHome.addHandlerReturnHome();
 
 	if (module.hot) {
 		module.hot.dispose(function () {});
