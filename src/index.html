@@ -4,17 +4,20 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./css/index.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/components.css">
+        <link rel="stylesheet" href="./css/utilities.css">
         <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
         <script type="module" defer src="./ts/Controller.ts"></script>
         <title>Pocket Workouts - Welcome!</title>
     </head>
     <body class="bg-[var(--background)]">
         <header class="flex h-24 pl-10 pr-20 content-center bg-[var(--primary)]">
-            <div id="logo-container" class="flex gap-5 mr-auto scale-75 phone:scale-100">
+            <div id="logo--index" class="flex gap-5 mr-auto scale-75 phone:scale-100 hover:cursor-pointer">
+                <a href="index.html" id="return--home" class="hidden"></a>
                 <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
-                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts</h1>
+                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts </h1>
             </div>
             <div id="log__in--header" class="self-center mr-6 hidden
             relative">
