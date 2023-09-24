@@ -1,0 +1,89 @@
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		z-index: -1;
+	}
+}
+
+@keyframes disapear {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes stretch-out {
+	0% {
+		width: 69%;
+	}
+	80% {
+		width: 83%;
+	}
+	100% {
+		width: 80%;
+	}
+}
+
+@keyframes stretch-in {
+	0% {
+		width: 80%;
+	}
+	100% {
+		width: 69%;
+	}
+}
+
+.fade-in-element {
+	animation: 200ms linear forwards fade-in;
+}
+
+.fade-out-element {
+	animation: 200ms linear forwards fade-out;
+}
+
+.disable--fade {
+	animation: 150ms linear forwards disapear;
+}
+
+.enable--fade {
+	animation: 150ms linear forwards appear;
+}
+
+.stretch-out {
+	animation: 200ms linear forwards stretch-out;
+	width: 80%;
+	font-weight: 700;
+}
+
+.stretch-in {
+	animation: 200ms linear stretch-in;
+	font-weight: 400;
+}

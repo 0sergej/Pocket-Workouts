@@ -1,87 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/reset.css">
-        <link rel="stylesheet" href="./css/base.css">
-        <link rel="stylesheet" href="./css/components.css">
-        <link rel="stylesheet" href="./css/utilities.css">
-        <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
-        <script type="module" defer src="./ts/Controller.ts"></script>
-        <title>PW - Make Your Template!</title>
-    </head>
-    <body class="bg-[var(--background)]">
-        <header class="flex h-24 pl-10 pr-20 content-center bg-[var(--primary)]">
-            <div id="logo--makeTemplate" class="flex gap-5 mr-auto scale-75 phone:scale-100 hover:cursor-pointer">
-                <a href="index.html" id="return--home" class="hidden"></a>
-                <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
-                <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts</h1>
-            </div>
-            <div id="log__in--header" class="self-center mr-6 hidden
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" defer src="./ts/Controller.ts"></script>
+    <title>PW - Make Your Template!</title>
+</head>
+
+<body class="bg-[var(--background)]">
+    <header class="flex h-24 pl-10 pr-20 content-center bg-[var(--primary)]">
+        <div id="logo--makeTemplate" class="flex gap-5 mr-auto scale-75 phone:scale-100 hover:cursor-pointer">
+            <a href="index.html" id="return--home" class="hidden"></a>
+            <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
+            <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">log in to get started on the
+                middle text</h1>
+        </div>
+        <div id="log__in--header" class="self-center hidden mr-auto
             relative">
-                <h2 id="welcome__message" class="text-[var(--accent)] text-[length:var(--sub-heading--sm)] hover:cursor-pointer" title="Cilck to change Username">Welcome
-            <span id="username"></span></h2>
-                <form id="new__username--form" class="disable--fade border-none hidden" >
-                    <label>
-                        <input id="new__username" class="absolute top-8 left-[25%]  input__login bg-[var(--accent)] text-[var(--primary)]"
+            <h2 id="welcome__message"
+                class="text-[var(--accent)] text-[length:var(--sub-heading--sm)] hover:cursor-pointer"
+                title="Cilck to change Username">Welcome
+                <span id="username"></span>
+            </h2>
+            <form id="new__username--form" class="disable--fade border-none hidden">
+                <label>
+                    <input id="new__username"
+                        class="absolute top-8 left-[25%]  input__login bg-[var(--accent)] text-[var(--primary)]"
                         type="text" placeholder="New Username" required />
                 </label>
-                </form>
-                </div>
-                <div id="buttons-container" class="flex gap-12 self-center">
-                <button id="log__in--btn" class="btn--accent ">Log In</button>
-                <button id="sign__up--btn" class="btn--accent ">Sign Up</button>
-                <button id="sign__out--btn" class="btn--accent | hidden">Sign out</button>
-                <button id="your--templates" class="btn--accent | hidden">Your Templates</button>
-            </div>
-            <div id="error__message--div" class="w-1/3 h-32 rounded-md bg-[var(--accent)] absolute top-20 left-1/3 opacity-0">
-                <p id="error__message--paragragh" class="text-white text-[length:var(--text--sm)] leading-[var(--text-lh)] h-full flex items-center justify-items-center mx-auto w-max p-4 max-w-fit">
-                </p>
-                <div id="error__message--closing__X" class="closing--X__dark cursor-pointer" ></div>
-            </div>
-        </header>
-        <dialog id="log__in--modal" class="fade-out-element modal">
-            <form method="dialog" class="flex gap-4 py-4 flex-row">
-                <label>
-                    <input id="log__in--username" class="input__login" type="text" placeholder="Username"
-                    autocomplete="username"
-                    required>
-                </label>
-                <label>
-                    <input id="log__in--password" class="input__login" type="password" placeholder="*****"
-                    autocomplete="current-password"
-                    required
-                    >
-                </label>
-                <div id="log__in--closing__X" class="closing--X cursor-pointer" ></div>
             </form>
-            <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
-        </dialog>
-        <dialog id="sign__up--modal"  class="fade-out-element modal">
-            <form method="dialog" class="flex gap-4 p-4 flex-col">
-                <label>
-                    <input id="sign__up--username" class="input__sign-up" type="text" placeholder="Username"
-                    autocomplete="username"
-                    required>
-                </label>
-                <label>
-                    <input id="sign__up--password" class="input__sign-up" type="password"
-                    placeholder="*****"
-                    autocomplete="new-password"
-                    required>
-                </label>
-                <label>
-                    <input id="sign__up--password__repeat" class="input__sign-up" type="password" placeholder="*****"
-                    autocomplete="new-password"
-                    required>
-                </label>
-                <div id="sign__up--closing__X" class="closing--X cursor-pointer" ></div>
-            </form>
-            <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
-        </dialog>
+        </div>
+        <div id="buttons-container" class="flex gap-12 self-center">
+            <button id="log__in--btn" class="btn--accent ">Log In</button>
+            <button id="sign__up--btn" class="btn--accent ">Sign Up</button>
+            <button id="sign__out--btn" class="btn--accent | hidden">Sign out</button>
+            <button id="your--templates" class="btn--accent | hidden">Your Templates</button>
+        </div>
+        <div id="error__message--div"
+            class="w-1/3 h-32 rounded-md bg-[var(--accent)] absolute top-20 left-1/3 opacity-0">
+            <p id="error__message--paragragh"
+                class="text-white text-[length:var(--text--sm)] leading-[var(--text-lh)] h-full flex items-center justify-items-center mx-auto w-max p-4 max-w-fit">
+            </p>
+            <div id="error__message--closing__X" class="closing--X after:bg-black before:bg-black cursor-pointer"></div>
+        </div>
+    </header>
+    <dialog id="log__in--modal" class="fade-out-element modal">
+        <form method="dialog" class="flex gap-4 py-4 flex-row">
+            <label>
+                <input id="log__in--username" class="input__login" type="text" placeholder="Username"
+                    autocomplete="username" required>
+            </label>
+            <label>
+                <input id="log__in--password" class="input__login" type="password" placeholder="*****"
+                    autocomplete="current-password" required>
+            </label>
+            <div id="log__in--closing__X" class="closing--X cursor-pointer"></div>
+        </form>
+        <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
+    </dialog>
+    <dialog id="sign__up--modal" class="fade-out-element modal">
+        <form method="dialog" class="flex gap-4 p-4 flex-col">
+            <label>
+                <input id="sign__up--username" class="input__sign-up" type="text" placeholder="Username"
+                    autocomplete="username" required>
+            </label>
+            <label>
+                <input id="sign__up--password" class="input__sign-up" type="password" placeholder="*****"
+                    autocomplete="new-password" required>
+            </label>
+            <label>
+                <input id="sign__up--password__repeat" class="input__sign-up" type="password" placeholder="*****"
+                    autocomplete="new-password" required>
+            </label>
+            <div id="sign__up--closing__X" class="closing--X cursor-pointer"></div>
+        </form>
+        <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
+    </dialog>
     <hero>
         <h1 class="">Choose Your Preferred
             Training Template</h1>
