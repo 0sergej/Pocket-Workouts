@@ -6,6 +6,7 @@ import slidingImagesView from './Views/slidingImagesView';
 import usernameView from './Views/usernameView';
 import makeTemplateView from './Views/makeTemplateView';
 import returnHome from './Views/returnHome';
+import chooseTemplateView from './Views/chooseTemplateView';
 
 const controlLogIn = function (logInData: any) {
 	// HACK any
@@ -41,9 +42,12 @@ const init = function () {
 	usernameView.addHandlerUsernameForm();
 	makeTemplateView.addHandlerMakeTamplate();
 	returnHome.addHandlerReturnHome();
+	chooseTemplateView.addHandlerBtnClick();
+	chooseTemplateView.addHandlerChangeToActiveImage();
+	chooseTemplateView.addHandlerImageClick();
 
 	if (module.hot) {
-		module.hot.dispose(function () {});
+		module.hot.accept();
 	}
 };
 
