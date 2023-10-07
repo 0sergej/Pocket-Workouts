@@ -81,6 +81,7 @@
 	animation: 200ms linear forwards stretch-out;
 	width: 80%;
 	font-weight: 700;
+    color: var(--accent);
 }
 
 .stretch-in {
