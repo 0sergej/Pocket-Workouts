@@ -42,13 +42,13 @@ const init = function () {
 	usernameView.addHandlerUsernameForm();
 	makeTemplateView.addHandlerMakeTamplate();
 	returnHome.addHandlerReturnHome();
-	chooseTemplateView.addHandlerBtnClick();
-	chooseTemplateView.addHandlerChangeToActiveImage();
-	chooseTemplateView.addHandlerImageClick();
+	chooseTemplateView.addHandlerBtn();
+	chooseTemplateView.addHandlerImageHover();
+    chooseTemplateView.addHandlerImageClick();
 
-	if (module.hot) {
-		module.hot.accept();
-	}
+    if (module.hot) {
+			module.hot.accept();
+		}
 };
 
 init();
