@@ -79,8 +79,6 @@ export const changeUsername = function (newUsername: string) {
 
 		const activeAccount = accountsArr.find((acc: { id: any }) => {
 			j++;
-			console.log(acc.id);
-			console.log(currentUser.id);
 			return acc.id === currentUser.id;
 		});
 		activeAccount.customeUsername = newUsername;
