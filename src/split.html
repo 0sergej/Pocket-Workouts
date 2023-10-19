@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="shortcut icon" href="../assets/png/FaviconAccent.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" defer src="./ts/Controller.ts"></script>
+    <title>PW -Personalise Your Split!</title>
+</head>
+
+<body class="bg-[var(--background)]">
+    <header class="flex h-24 pl-10 pr-20 content-center bg-[var(--primary)]">
+        <div id="logo--split" class="flex gap-5 mr-auto scale-75 phone:scale-100 hover:cursor-pointer">
+            <a href="index.html" id="return--home" class="hidden"></a>
+            <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
+            <h1
+                class="laptop:text-[length:var(--sub-heading)] text-[var(--accent)] text-[length:var(--heading--sm)] self-center">
+                Pocket Workouts</h1>
+        </div>
+        <div id="log__in--header" class="self-center hidden mr-auto relative">
+            <h2 id="welcome__message"
+                class="laptop:text-[length:var(--sub-heading)] text-[var(--accent)] text-[length:var(--sub-heading--sm)] hover:cursor-pointer"
+                title="Cilck to change Username">Welcome
+                <span id="username"></span>
+            </h2>
+            <form id="new__username--form" class="disable--fade border-none hidden">
+                <label>
+                    <input id="new__username"
+                        class="absolute top-8 left-[25%]  input__login bg-[var(--accent)] text-[var(--primary)]"
+                        type="text" placeholder="New Username" required />
+                </label>
+            </form>
+        </div>
+        <div id="buttons-container" class="flex gap-12 self-center">
+            <button id="log__in--btn" class="btn--accent ">Log In</button>
+            <button id="sign__up--btn" class="btn--accent ">Sign Up</button>
+            <button id="sign__out--btn" class="btn--accent | hidden">Sign out</button>
+            <button id="your--templates" class="btn--accent | hidden">Your Templates</button>
+        </div>
+        <div id="error__message--div"
+            class="w-1/3 h-32 rounded-md bg-[var(--accent)] absolute top-20 left-1/3 opacity-0">
+            <p id="error__message--paragragh"
+                class="laptop:text-[length:var(--sub-heading)] text-white text-[length:var(--text--sm)] leading-[var(--text-lh)] h-full flex items-center justify-items-center mx-auto w-max p-4 max-w-fit">
+            </p>
+            <div id="error__message--closing__X" class="closing--X after:bg-black before:bg-black cursor-pointer"></div>
+        </div>
+    </header>
+    <dialog id="log__in--modal" class="fade-out-element modal">
+        <form method="dialog" class="flex gap-4 py-4 flex-row">
+            <label>
+                <input id="log__in--username" class="input__login" type="text" placeholder="Username"
+                    autocomplete="username" required>
+            </label>
+            <label>
+                <input id="log__in--password" class="input__login" type="password" placeholder="*****"
+                    autocomplete="current-password" required>
+            </label>
+            <div id="log__in--closing__X" class="closing--X cursor-pointer"></div>
+        </form>
+        <button id="log__in--btn" class="btn--accent max-w-fit mx-auto" type="submit">Log In</button>
+    </dialog>
+    <dialog id="sign__up--modal" class="fade-out-element modal">
+        <form method="dialog" class="flex gap-4 p-4 flex-col">
+            <label>
+                <input id="sign__up--username" class="input__sign-up" type="text" placeholder="Username"
+                    autocomplete="username" required>
+            </label>
+            <label>
+                <input id="sign__up--password" class="input__sign-up" type="password" placeholder="*****"
+                    autocomplete="new-password" required>
+            </label>
+            <label>
+                <input id="sign__up--password__repeat" class="input__sign-up" type="password" placeholder="*****"
+                    autocomplete="new-password" required>
+            </label>
+            <div id="sign__up--closing__X" class="closing--X cursor-pointer"></div>
+        </form>
+        <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
+    </dialog>
+    <main class="">
+        <h1 class="mx-auto text-5xl max-w-[25ch] text-center my-10 text-[var(--primary)] leading-tight">Now Its Time to
+            Personalise Your Split</h1>
+        <h2 class="mx-auto text-2xl text-center my-10 text-[var(--primary)] leading-tight">Choose How Many Much do You
+            Want to Train Each Body Part:</h2>
+        <section class="grid grid-cols-1 gap-y-[15%] column mx-auto p-[5%] phone:grid-cols-3">
+            <form id="chest--form" class="flex justify-evenly">
+                <label for="chest"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Chest:</label>
+                <input type="range" id="chest" name="chest" min="0" max="3">
+                <p id="value--chest"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[length:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="mid_back--form" class="flex justify-evenly">
+                <label for="mid_back"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Mid
+                    Back:</label>
+                <input type="range" id="mid_back" name="mid_back" min="0" max="3">
+                <p id="value--mid_back"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="quads--form" class="flex justify-evenly">
+                <label for="quads"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Quads:</label>
+                <input type="range" id="quads" name="quads" min="0" max="3">
+                <p id="value--quads"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="triceps--form" class="flex justify-evenly">
+                <label for="triceps"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Triceps:</label>
+                <input type="range" id="triceps" name="triceps" min="0" max="3">
+                <p id="value--triceps"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="lats--form" class="flex justify-evenly">
+                <label for="lats"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Lats:</label>
+                <input type="range" id="lats" name="lats" min="0" max="3">
+                <p id="value--lats"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="hams--form" class="flex justify-evenly">
+                <label for="hams"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Hams:</label>
+                <input type="range" id="hams" name="hams" min="0" max="3">
+                <p id="value--hams"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="front_delt--form" class="flex justify-evenly">
+                <label for="front_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Front
+                    delt:</label>
+                <input type="range" id="front_delt" name="front_delt" min="0" max="3">
+                <p id="value--front_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="rear_delt--form" class="flex justify-evenly">
+                <label for="rear_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Rear
+                    delt:</label>
+                <input type="range" id="rear_delt" name="rear_delt" min="0" max="3">
+                <p id="value--rear_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="glutes--form" class="flex justify-evenly">
+                <label for="glutes"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Glutes:</label>
+                <input type="range" id="glutes" name="glutes" min="0" max="3">
+                <p id="value--glutes"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="side_delt--form" class="flex justify-evenly">
+                <label for="side_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Side
+                    delt:</label>
+                <input type="range" id="side_delt" name="side_delt" min="0" max="3">
+                <p id="value--side_delt"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="biceps--form" class="flex justify-evenly">
+                <label for="biceps"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Biceps:</label>
+                <input type="range" id="biceps" name="biceps" min="0" max="3">
+                <p id="value--biceps"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+            <form id="calfs--form" class="flex justify-evenly">
+                <label for="calfs"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">Calfs:</label>
+                <input type="range" id="calfs" name="calfs" min="0" max="3">
+                <p id="value--calfs"
+                    class="laptop:text-[length:var(--sub-heading)] tablet:text-[length:var(--sub-heading--sm)] phone:text-[lenght:var(--text--sm)] text-[length:var(--sub-heading)]">
+                    0</p>
+            </form>
+        </section>
+        <div id="buttons" class="flex justify-between p-[10%]">
+            <button class="btn--primary scale-[110%]">
+                <a href="makeTemplate.html">&#8592; Change Your Mind</a>
+            </button>
+            <button class="btn--primary scale-[110%]">I’m All Ready &#8594;</button>
+        </div>
+    </main>
+</body>
+
+</html>
