@@ -7,6 +7,7 @@ import usernameView from './Views/usernameView';
 import makeTemplateView from './Views/makeTemplateView';
 import returnHome from './Views/returnHome';
 import chooseTemplateView from './Views/chooseTemplateView';
+import spiltView from './Views/spiltView';
 
 const controlLogIn = function (logInData: any) {
 	// HACK any
@@ -31,7 +32,7 @@ const controlSignOut = function () {
 };
 
 const defaultLogIn = function () {
-    // Get current user
+	// Get current user
 	const currentUser: Object = Model.getCurrentUser();
 	window.addEventListener('load', () => {
 		// If current user is not logged in, log him in
@@ -74,6 +75,7 @@ const initView = function () {
 	chooseTemplateView.addHandlerBtn();
 	chooseTemplateView.addHandlerImageHover();
 	chooseTemplateView.addHandlerImageClick();
+	spiltView.handleSliders();
 };
 
 initController();
