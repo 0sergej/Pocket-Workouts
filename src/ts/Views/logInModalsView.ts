@@ -17,10 +17,11 @@ class logInModalsView {
 		this.#bindButtons(this.signUpButtons, () => this.#showModal(this.#signUpModal, this.#logInModal));
 	}
 
-	addHandlerSignOut() {
+	addHandlerSignOut(handler: Function) {
 		this.#signOutButton?.addEventListener('click', () => {
 			this.#logOut();
 			this.#logInHeaderContainter?.classList.add('hidden');
+            handler();
 		});
 	}
 

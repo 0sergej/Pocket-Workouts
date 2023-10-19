@@ -26,7 +26,7 @@ export const logInDataCheck = function (logInData: any) {
 		if (Object.keys(userData).length === 0) logInResult = `Wrong username or password :K`;
 		account.customeUsername = userData?.customeUsername;
 
-		currentUser = account;
+		if (logInResult === true) saveCurrentUser(account);
 
 		return [account, logInResult];
 	}
@@ -42,9 +42,11 @@ export const logInDataCheck = function (logInData: any) {
 		account.id = Math.random();
 		account.existingUser = true;
 	}
-	// Save User's Data
+	// Save User Data
 	if (logInResult === true) makeUser();
-	currentUser = account;
+	// Save User Data for Auto-login
+	saveCurrentUser(account);
+
 	return logInResult;
 };
 
@@ -130,4 +132,21 @@ const checkIfUsernameExists = function () {
 		errorMessage = accountsArr.some((acc) => acc.username === account.username) ? 'Username is already taken. Please try something different :}' : true;
 	}
 	return errorMessage;
+};
+
+export const getCurrentUser = function () {
+	const currentUserJSON = localStorage.getItem('currentUser');
+
+	if (currentUserJSON) currentUser = JSON.parse(currentUserJSON);
+
+	return currentUser;
+};
+
+export function clearCurrentUser() {
+	localStorage.removeItem('currentUser');
+}
+
+const saveCurrentUser = function (account: any) {
+	currentUser = account;
+	localStorage.setItem('currentUser', JSON.stringify(currentUser));
 };
