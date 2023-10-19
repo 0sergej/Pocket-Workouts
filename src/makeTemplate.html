@@ -24,11 +24,9 @@
         <div id="logo--makeTemplate" class="flex gap-5 mr-auto scale-75 phone:scale-100 hover:cursor-pointer">
             <a href="index.html" id="return--home" class="hidden"></a>
             <img src="../assets/png/FaviconAccent.png" class="w-14 h-14 self-center"></img>
-            <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">log in to get started on the
-                middle text</h1>
+            <h1 class="text-[var(--accent)] text-[length:var(--heading--sm)] self-center">Pocket Workouts</h1>
         </div>
-        <div id="log__in--header" class="self-center hidden mr-auto
-            relative">
+        <div id="log__in--header" class="self-center hidden mr-auto relative">
             <h2 id="welcome__message"
                 class="text-[var(--accent)] text-[length:var(--sub-heading--sm)] hover:cursor-pointer"
                 title="Cilck to change Username">Welcome
@@ -88,14 +86,16 @@
         </form>
         <button id="sign__up--btn" class="btn--accent max-w-fit mx-auto" type="submit">Sign Up</button>
     </dialog>
-    <hero>
+    <main>
         <h1 class="mx-auto text-5xl max-w-[25ch] text-center my-10 text-[var(--primary)] leading-tight">Choose Your
             Preferred
             Training Template</h1>
         <section class="grid grid-cols-3 mx-auto p-[5%] gap-[10%]">
             <div class="grid__column--1 flex flex-col gap-1">
-                <img src="../assets/png/splits/UpperLowerSplit-Active.png" alt="Upper Lower Split - Active" id="chooseTemplateImg" class="hidden"  data-image="0">
-                <img src="../assets/png/splits/UpperLowerSplit.png" alt="Upper Lower - Split" id="chooseTemplateImg" class=""  data-image="1" data-btn="0">
+                <img src="../assets/png/splits/UpperLowerSplit-Active.png" alt="Upper Lower Split - Active"
+                    id="chooseTemplateImg" class="hidden" data-image="0">
+                <img src="../assets/png/splits/UpperLowerSplit.png" alt="Upper Lower - Split" id="chooseTemplateImg"
+                    class="" data-image="1" data-btn="0">
                 <article id="column__1--info" class="text-center p-6">
                     <header>
                         <h2>
@@ -109,12 +109,17 @@
                         Ladies Training Choice
                     </p>
                 </article>
-                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="0">Choose Tamplate</button>
+                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="0"><a
+                        href="split.html">
+                        Choose Tamplate
+                    </a>
+                </button>
             </div>
             <div class="grid__column--2 flex flex-col gap-1">
                 <img src="../assets/png/splits/PPLSplit-Active.png" alt="Push Pull Legs - Active" id="chooseTemplateImg"
-                    class="hidden"  data-image="2">
-                <img src="../assets/png/splits/PPLSplit.png" alt="Push Pull Legs" id="chooseTemplateImg" data-image="3" class="" data-btn="1">
+                    class="hidden" data-image="2">
+                <img src="../assets/png/splits/PPLSplit.png" alt="Push Pull Legs" id="chooseTemplateImg" data-image="3"
+                    class="" data-btn="1">
                 <article id="column__2--info" class="text-center p-6">
                     <header>
                         <h2>
@@ -128,12 +133,16 @@
                         Best Challenge For Guys
                     </p>
                 </article>
-                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="1">Choose Tamplate</button>
+                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="1"><a
+                        href="split.html">
+                        Choose Tamplate
+                    </a></button>
             </div>
             <div class="grid__column--3 flex flex-col gap-1">
                 <img src="../assets/png/splits/FullBodySplit-Active.png" alt="Full Body - Active" id="chooseTemplateImg"
                     class="hidden" data-image="4">
-                <img src="../assets/png/splits/FullBodySplit.png" alt="Full Body" id="chooseTemplateImg" class="" data-image="5" data-btn="2">
+                <img src="../assets/png/splits/FullBodySplit.png" alt="Full Body" id="chooseTemplateImg" class=""
+                    data-image="5" data-btn="2">
                 <article id="column__3--info" class="text-center p-6">
                     <header>
                         <h2 class="text-[var(--sub-heading)] ">
@@ -147,10 +156,13 @@
                         For Busy People
                     </p>
                 </article>
-                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="2">Choose Tamplate</button>
+                <button id="chooseTemplateBtn" class="btn--primary self-center stretch-in" data-btn="2"><a
+                        href="split.html">
+                        Choose Tamplate
+                    </a></button>
             </div>
         </section>
-    </hero>
+    </main>
 </body>
 
 </html>
